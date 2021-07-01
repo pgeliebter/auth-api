@@ -15,4 +15,10 @@ class SessionsController < ApplicationController
       render json: {}, status: :unauthorized
     end
   end
+
+  def test
+    if current_user
+      render json: { email: current_user.email }
+    end
+  end
 end
